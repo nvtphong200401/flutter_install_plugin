@@ -107,6 +107,7 @@ class InstallPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAw
                 return
             }
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             intent.putExtra(Intent.EXTRA_RETURN_RESULT, true)
             activity?.startActivityForResult(intent, REQUEST_CODE_PERMISSION_OR_INSTALL)
         } else {
